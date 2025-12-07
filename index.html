@@ -3,337 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nalua Braids - Beleza Ancestral e Autoestima. Agende seu horário.">
     <title>Nalua | Agenda 2026</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
+        /* --- VARIÁVEIS E RESET (Identidade Voxo Estúdio) --- */
         :root {
-            --bg-color: #FAF7F2;
-            --primary: #3E3B36; /* Marrom Escuro */
-            --gold: #C19A6B;    /* Dourado */
-            --white: #ffffff;
-            --text-muted: #666;
-            --radius: 8px;
+            --cor-fundo: #FAF7F2; /* Creme suave */
+            --cor-destaque: #C19A6B; /* Dourado/Areia */
+            --cor-texto-principal: #3E3B36; /* Marrom escuro quase preto */
+            --cor-texto-suave: #6D6A65;
+            --cor-marrom-forte: #4A3B32;
+            --cor-botao: #2C2C2C;
+            --cor-botao-hover: #C19A6B;
+            
+            --fonte-titulo: 'Cinzel', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+            
+            --espacamento-secao: 80px 20px;
+            --border-radius: 8px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--primary);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            font-family: var(--fonte-corpo);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 { font-family: 'Cinzel', serif; }
-        
-        /* Botão Padrão */
-        .btn {
+        h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 600; }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; border-radius: var(--border-radius); }
+
+        /* --- UTILITÁRIOS --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .btn-cta {
             display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            background-color: var(--cor-botao);
+            color: #fff;
+            padding: 15px 35px;
             text-transform: uppercase;
+            font-size: 0.9rem;
             letter-spacing: 1px;
-            transition: 0.3s;
-            border: 2px solid var(--primary);
+            font-weight: 600;
+            border-radius: 50px;
+            margin-top: 20px;
             cursor: pointer;
+            border: 1px solid var(--cor-botao);
         }
-        .btn:hover {
-            background: transparent;
-            color: var(--primary);
+        .btn-cta:hover {
+            background-color: transparent;
+            color: var(--cor-botao);
+            border-color: var(--cor-botao);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--cor-marrom-forte);
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--cor-destaque);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
         }
 
-        /* Hero Section */
+        /* --- HEADER --- */
         header {
+            padding: 20px 0;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            background: transparent;
+        }
+        .logo { font-family: var(--fonte-titulo); font-size: 2rem; color: var(--cor-marrom-forte); letter-spacing: 3px; }
+
+        /* --- HERO SECTION --- */
+        .hero {
             height: 100vh;
-            /* Cor de fundo sólida (fallback) + Imagem */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=1374&auto=format&fit=crop'), #4A3B32;
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1635368560882-62ba515d978a?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
+            color: #fff;
+            padding: 0 20px;
         }
-        
-        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero-text p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .hero-text .btn { background: white; color: var(--primary); border-color: white; }
-        .hero-text .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
+        .hero-content h2 { font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 15px; opacity: 0.9; }
+        .hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; }
+        .hero .btn-cta { background-color: #fff; color: var(--cor-marrom-forte); border: none; }
+        .hero .btn-cta:hover { background-color: var(--cor-destaque); color: #fff; }
 
-        /* Marquee (Faixa) */
-        .marquee { background: var(--primary); color: var(--gold); padding: 15px 0; overflow: hidden; white-space: nowrap; }
-        .marquee span { margin: 0 30px; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+        /* --- TICKER / MARQUEE (Faixa Infinita) --- */
+        .marquee {
+            background-color: var(--cor-marrom-forte);
+            color: var(--cor-destaque);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-content span {
+            font-family: var(--fonte-titulo);
+            margin: 0 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* Seções Gerais */
-        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; color: var(--primary); }
-        .section-header p { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        /* --- ESSÊNCIA E VALORES --- */
+        .essencia { padding: var(--espacamento-secao); text-align: center; }
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .valor-card { padding: 30px; background: #fff; border: 1px solid #eee; border-radius: var(--border-radius); transition: 0.3s; }
+        .valor-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .valor-card i { font-size: 2rem; color: var(--cor-destaque); margin-bottom: 15px; }
+        .valor-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
 
-        /* Cards de Valores */
-        .grid-valores { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: center; }
-        .card { background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 15px; }
+        /* --- PORTFOLIO --- */
+        .portfolio { padding: var(--espacamento-secao); background-color: #fff; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item { position: relative; overflow: hidden; border-radius: var(--border-radius); height: 400px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-caption {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff; padding: 20px;
+            transform: translateY(100%); transition: 0.3s;
+        }
+        .gallery-item:hover .gallery-caption { transform: translateY(0); }
 
-        /* Menu de Preços */
-        .menu-list { background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; }
-        .menu-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 20px 0; }
-        .menu-item:last-child { border: none; }
-        .item-desc h4 { font-size: 1.1rem; color: var(--primary); }
-        .item-desc span { display: block; font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
-        .item-price { font-weight: bold; color: var(--gold); font-size: 1.2rem; min-width: 100px; text-align: right; }
+        /* --- TABELA DE PREÇOS (MENU) --- */
+        .menu-servicos { padding: var(--espacamento-secao); }
+        .menu-container {
+            max-width: 800px; margin: 0 auto;
+            background: #fff; padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .menu-item {
+            display: flex; justify-content: space-between; align-items: baseline;
+            border-bottom: 1px solid #eee; padding: 15px 0; margin-bottom: 10px;
+        }
+        .menu-item:last-child { border-bottom: none; }
+        .item-info h4 { font-size: 1.1rem; color: var(--cor-marrom-forte); margin-bottom: 5px; }
+        .item-info p { font-size: 0.85rem; color: var(--cor-texto-suave); font-style: italic; }
+        .item-price { font-weight: 600; color: var(--cor-destaque); font-size: 1.1rem; min-width: 80px; text-align: right; }
 
-        /* Aviso 30% */
-        .aviso-pagamento { background: var(--primary); color: white; border-radius: var(--radius); padding: 50px; text-align: center; margin-top: 50px; }
-        .aviso-pagamento h3 { color: var(--gold); font-size: 2rem; margin-bottom: 20px; }
-        .steps { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
-        .step { text-align: center; max-width: 200px; }
-        .step i { font-size: 2rem; color: var(--gold); margin-bottom: 15px; display: block; }
+        /* --- REGRA DOS 30% (DESTAQUE) --- */
+        .regra-pagamento {
+            padding: 60px 20px;
+            background-color: var(--cor-marrom-forte);
+            color: #fff;
+            text-align: center;
+        }
+        .regra-box {
+            max-width: 700px; margin: 0 auto;
+            border: 1px solid var(--cor-destaque);
+            padding: 40px; border-radius: var(--border-radius);
+            background: rgba(255,255,255,0.05);
+        }
+        .regra-box h3 { color: var(--cor-destaque); font-size: 1.8rem; margin-bottom: 20px; }
+        .steps { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+        .step { flex: 1; min-width: 200px; }
+        .step i { font-size: 1.5rem; color: var(--cor-destaque); margin-bottom: 10px; }
 
-        /* Formulário */
-        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .input-group input, .input-group select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Montserrat', sans-serif; }
-        .input-group input:focus, .input-group select:focus { border-color: var(--gold); outline: none; }
+        /* --- FORMULÁRIO --- */
+        .agendamento { padding: var(--espacamento-secao); }
+        .form-box {
+            max-width: 600px; margin: 0 auto;
+            background: #fff; padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 12px;
+            border: 1px solid #ddd; border-radius: 5px;
+            font-family: var(--fonte-corpo);
+            outline: none; transition: 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: var(--cor-destaque); }
+        .obs { font-size: 0.8rem; color: #888; margin-top: 5px; }
 
-        /* Footer e Mapa */
-        .map-section { padding: 0; width: 100%; height: 450px; background-color: #eee; }
-        .map-section iframe { width: 100%; height: 100%; border: 0; }
-        
-        footer { background: #222; color: white; text-align: center; padding: 60px 20px; }
-        .social-icons a { color: white; font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--gold); }
+        /* --- FOOTER --- */
+        footer {
+            background-color: #222; color: #fff;
+            padding: 50px 20px; text-align: center;
+        }
+        .footer-content h3 { color: var(--cor-destaque); margin-bottom: 20px; }
+        .social-links a { color: #fff; font-size: 1.5rem; margin: 0 10px; }
+        .social-links a:hover { color: var(--cor-destaque); }
+        .copyright { margin-top: 40px; font-size: 0.8rem; color: #666; border-top: 1px solid #333; padding-top: 20px; }
 
-        /* Responsivo */
-        @media(max-width: 768px) {
-            .hero-text h1 { font-size: 2.5rem; }
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .menu-container { padding: 20px; }
             .menu-item { flex-direction: column; align-items: flex-start; }
-            .item-price { margin-top: 10px; text-align: left; }
-            .steps { flex-direction: column; align-items: center; gap: 30px; }
+            .item-price { text-align: left; margin-top: 5px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="hero-text">
-            <p>AGENDA 2026</p>
-            <h1>SUA BELEZA<br>ANCESTRAL</h1>
-            <a href="#agendar" class="btn">Agendar Horário</a>
-        </div>
+        <div class="logo">NALUA</div>
     </header>
 
+    <section class="hero">
+        <div class="hero-content">
+            <h2>AGENDA 2026 ABERTA</h2>
+            <h1>SUA BELEZA<br>ANCESTRAL</h1>
+            <p>Mais do que um salão, um espaço de conexão. Tranças que contam histórias, elevam a autoestima e celebram sua identidade.</p>
+            <a href="#agendamento" class="btn-cta">Agendar Horário</a>
+        </div>
+    </section>
+
     <div class="marquee">
-        <marquee scrollamount="10">
-            ANCESTRALIDADE • IDENTIDADE • AUTOESTIMA • BELEZA NEGRA •
-            ANCESTRALIDADE • IDENTIDADE • AUTOESTIMA • BELEZA NEGRA •
-            ANCESTRALIDADE • IDENTIDADE • AUTOESTIMA • BELEZA NEGRA
-        </marquee>
+        <div class="marquee-content">
+            <span>Ancestralidade</span> • <span>Identidade</span> • <span>Autoestima</span> • <span>Beleza Negra</span> •
+            <span>Ancestralidade</span> • <span>Identidade</span> • <span>Autoestima</span> • <span>Beleza Negra</span> •
+            <span>Ancestralidade</span> • <span>Identidade</span> • <span>Autoestima</span> • <span>Beleza Negra</span>
+        </div>
     </div>
 
-    <section>
-        <div class="section-header">
-            <p>A Essência Nalua</p>
-            <h2>Muito além de trançar</h2>
-        </div>
-        <div class="grid-valores">
-            <div class="card">
-                <i class="fas fa-spa"></i>
-                <h3>Humanização</h3>
-                <p>Aqui você não é um número. Ouvimos sua história e respeitamos sua identidade.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-crown"></i>
-                <h3>Autoestima</h3>
-                <p>Nossas técnicas são pensadas para elevar sua confiança e conexão ancestral.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-coffee"></i>
-                <h3>Conforto</h3>
-                <p>Ambiente climatizado, café especial e uma energia que renova.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="menu-precos">
-        <div class="section-header">
-            <p>Menu 2026</p>
-            <h2>Nossos Serviços</h2>
-        </div>
-        <div class="menu-list">
-            <div class="menu-item">
-                <div class="item-desc">
-                    <h4>Box Braid</h4>
-                    <span>Clássica e versátil (+ Mão de obra)</span>
+    <section class="essencia">
+        <div class="container">
+            <h2 class="section-title">A Essência Nalua</h2>
+            <p class="section-subtitle">Muito além de trançar cabelos</p>
+            <p style="max-width: 700px; margin: 0 auto;">No Nalua, cada detalhe foi pensado para acolher você. Do atendimento humanizado que respeita sua história até o ambiente preparado para ser seu momento de paz. Aqui, a técnica se une ao carinho.</p>
+            
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Acolhimento</h3>
+                    <p>Um espaço seguro onde você é ouvida e respeitada.</p>
                 </div>
-                <div class="item-price">R$ 380</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-desc">
-                    <h4>Gypsy Braid</h4>
-                    <span>Estilo boho chic, livre e leve</span>
+                <div class="valor-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Identidade</h3>
+                    <p>Visagismo e técnicas que valorizam quem você realmente é.</p>
                 </div>
-                <div class="item-price">R$ 440</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-desc">
-                    <h4>Goddess Braids</h4>
-                    <span>Pontas cacheadas, acabamento premium</span>
-                </div>
-                <div class="item-price">R$ 400</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-desc">
-                    <h4>Boho Braids</h4>
-                    <span>Leveza e movimento</span>
-                </div>
-                <div class="item-price">R$ 415</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-desc">
-                    <h4>Nagô (Fulani)</h4>
-                    <span>Arte rente à raiz</span>
-                </div>
-                <div class="item-price">R$ 215</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-desc">
-                    <h4>Spa Capilar (Pré/Pós)</h4>
-                    <span>Higienização profunda e detox</span>
-                </div>
-                <div class="item-price">R$ 60</div>
-            </div>
-        </div>
-
-        <div class="aviso-pagamento">
-            <h3>Política de Agendamento</h3>
-            <p>Para garantir que seu horário seja <strong>exclusivamente seu</strong> e prepararmos seu material com carinho, trabalhamos com confirmação via sinal.</p>
-            <div class="steps">
-                <div class="step">
-                    <i class="fas fa-calendar-alt"></i>
-                    <strong>1. Escolha a data</strong>
-                </div>
-                <div class="step">
-                    <i class="fas fa-lock"></i>
-                    <strong>2. Sinal de 30%</strong>
-                    <div style="font-size: 0.8rem; margin-top:5px; opacity:0.8">Garante o horário</div>
-                </div>
-                <div class="step">
-                    <i class="fas fa-check-circle"></i>
-                    <strong>3. Confirmação</strong>
+                <div class="valor-card">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Experiência</h3>
+                    <p>Café, ambiente climatizado e energia única.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="agendar">
-        <div class="section-header">
-            <p>Você merece esse cuidado</p>
-            <h2>Solicitar Agendamento</h2>
-        </div>
-        <div class="form-container">
-            <form id="whatsForm">
-                <div class="input-group">
-                    <label>Seu Nome</label>
-                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+    <section class="menu-servicos">
+        <div class="container">
+            <h2 class="section-title">Menu 2026</h2>
+            <p class="section-subtitle">Escolha sua nova versão</p>
+
+            <div class="menu-container">
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Box Braid</h4>
+                        <p>Clássica e versátil (+ Mão de obra)</p>
+                    </div>
+                    <div class="item-price">R$ 380</div>
                 </div>
-                <div class="input-group">
-                    <label>Serviço Desejado</label>
-                    <select id="servico" required>
-                        <option value="" disabled selected>Selecione...</option>
-                        <option value="Box Braid">Box Braid (R$ 380)</option>
-                        <option value="Gypsy Braid">Gypsy Braid (R$ 440)</option>
-                        <option value="Goddess Braids">Goddess Braids (R$ 400)</option>
-                        <option value="Boho Braids">Boho Braids (R$ 415)</option>
-                        <option value="Nagô Fulani">Nagô Fulani (R$ 215)</option>
-                        <option value="French Curl">French Curl (R$ 380)</option>
-                        <option value="Spa Capilar">Spa Capilar (R$ 60)</option>
-                        <option value="Manutenção">Manutenção / Retirada</option>
-                    </select>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Gypsy Braid</h4>
+                        <p>Estilo boho chic</p>
+                    </div>
+                    <div class="item-price">R$ 440</div>
                 </div>
-                <div class="input-group">
-                    <label>Data Preferida</label>
-                    <input type="date" id="data" required>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Goddess Braids</h4>
+                        <p>Pontas cacheadas</p>
+                    </div>
+                    <div class="item-price">R$ 400</div>
                 </div>
-                <div class="input-group">
-                    <label>Horário</label>
-                    <select id="horario">
-                        <option value="Manhã">Manhã (09:00 - 12:00)</option>
-                        <option value="Tarde">Tarde (13:00 - 17:00)</option>
-                    </select>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Boho Braids</h4>
+                        <p>Leveza e movimento</p>
+                    </div>
+                    <div class="item-price">R$ 415</div>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Enviar via WhatsApp</button>
-            </form>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Nagô (Fulani)</h4>
+                        <p>Arte rente à raiz</p>
+                    </div>
+                    <div class="item-price">R$ 215</div>
+                </div>
+
+                <div style="margin-top: 30px; margin-bottom: 10px; border-top: 1px dashed #ccc; padding-top: 20px;">
+                    <h4 style="text-align: center; color: var(--cor-destaque); margin-bottom: 20px;">Cuidados & Manutenção</h4>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Spa Capilar</h4>
+                        <p>Higienização profunda e detox pré/pós trança</p>
+                    </div>
+                    <div class="item-price">R$ 60</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Manutenção Parcial</h4>
+                        <p>Renovação da frente (2 a 3 fileiras)</p>
+                    </div>
+                    <div class="item-price">R$ 100 - 150</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Retirada + Umectação</h4>
+                        <p>Remoção segura e nutrição</p>
+                    </div>
+                    <div class="item-price">R$ 80 - 100</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="map-section">
-        <iframe 
-            src="https://maps.google.com/maps?q=Rua%20Delta%2C%20306%20-%20Centro%2C%20Imperatriz%20-%20MA&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-            frameborder="0" 
-            scrolling="no" 
-            marginheight="0" 
-            marginwidth="0" 
-            loading="lazy">
-        </iframe>
-    </div>
+    <section class="regra-pagamento">
+        <div class="container">
+            <div class="regra-box">
+                <h3>Confirmação de Agendamento</h3>
+                <p>Para garantir a exclusividade do seu horário e o preparo antecipado do material, trabalhamos com uma entrada de segurança.</p>
+                
+                <div class="steps">
+                    <div class="step">
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>1. Solicite</h4>
+                        <p>Preencha o formulário abaixo.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-lock"></i>
+                        <h4>2. Sinal de 30%</h4>
+                        <p>O pagamento garante seu horário.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-sparkles"></i>
+                        <h4>3. Transformação</h4>
+                        <p>O restante é pago no dia.</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">Aceitamos PIX, Cartão e Dinheiro.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="agendamento" class="agendamento">
+        <div class="container">
+            <h2 class="section-title">Pronta para Brilhar?</h2>
+            <p class="section-subtitle">Preencha para iniciar o atendimento no WhatsApp</p>
+
+            <div class="form-box">
+                <form id="whatsappForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Como você gosta de ser chamada?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servico">Serviço Desejado</label>
+                        <select id="servico" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Box Braid">Box Braid (R$ 380)</option>
+                            <option value="Gypsy Braid">Gypsy Braid (R$ 440)</option>
+                            <option value="Goddess Braids">Goddess Braids (R$ 400)</option>
+                            <option value="Boho Braids">Boho Braids (R$ 415)</option>
+                            <option value="Nagô Fulani">Nagô Fulani (R$ 215)</option>
+                            <option value="French Curl">French Curl (R$ 380)</option>
+                            <option value="Twist">Twist (R$ 400)</option>
+                            <option value="Spa Capilar">Spa Capilar (R$ 60)</option>
+                            <option value="Outro/Dúvida">Quero Orçamento Personalizado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data">Data de Preferência</label>
+                        <input type="date" id="data">
+                        <p class="obs">Atendimentos de Segunda a Sábado.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="turno">Horário Preferido</label>
+                        <select id="turno">
+                            <option value="Manhã">Manhã (09h - 12h)</option>
+                            <option value="Tarde">Tarde (13h - 17h)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-cta" style="width: 100%; text-align: center;">Solicitar Agendamento</button>
+                    <p style="text-align: center; font-size: 0.8rem; margin-top: 15px; color: #888;">Ao clicar, você será redirecionada para o WhatsApp da Nalua.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section style="height: 400px; width: 100%;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.966456728!2d-47.49!3d-5.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzEnMTIuMCJTIDQ3wrAyOScyNC.0Ilc!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; filter: grayscale(100%);" allowfullscreen="" loading="lazy"></iframe>
+    </section>
 
     <footer>
-        <h3>NALUA BRAIDS</h3>
-        <p>Rua Delta, 306 - Centro, Imperatriz - MA</p>
-        <div class="social-icons" style="margin-top: 20px;">
-            <a href="https://instagram.com/nalua_braids" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" id="zapFooter"><i class="fab fa-whatsapp"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <h3>NALUA BRAIDS</h3>
+                <p>Rua Delta, 306 - Centro, Imperatriz - MA</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Nalua Braids. Todos os direitos reservados.<br>
+                Desenvolvido por <strong>Voxo Estúdio</strong>
+            </div>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">© 2026 Nalua Braids - Desenvolvido por Voxo Estúdio</p>
     </footer>
 
     <script>
-        // Configuração do Telefone (Insira o número aqui, apenas dígitos)
-        const telefoneNalua = "5599999999999"; 
-
-        // Atualiza link do rodapé
-        document.getElementById('zapFooter').href = `https://wa.me/${telefoneNalua}`;
-
-        document.getElementById('whatsForm').addEventListener('submit', function(e) {
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Dados do formulário
+            // Captura dos dados
             const nome = document.getElementById('nome').value;
             const servico = document.getElementById('servico').value;
-            const dataRaw = document.getElementById('data').value;
-            const horario = document.getElementById('horario').value;
-
-            // Formata Data (Corrige problema de fuso horário)
-            let dataFormatada = "A combinar";
-            if (dataRaw) {
-                const partes = dataRaw.split('-');
-                dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+            const dataInput = document.getElementById('data').value;
+            const turno = document.getElementById('turno').value;
+            
+            // Formata a data para dia/mês/ano se estiver preenchida
+            let dataFormatada = "uma data a combinar";
+            if(dataInput) {
+                const dataObj = new Date(dataInput);
+                dataFormatada = dataObj.toLocaleDateString('pt-BR');
             }
 
-            // Cria mensagem
-            const mensagem = `*Olá, Nalua!* ✨%0A%0A` +
-                             `Me chamo *${nome}* e gostaria de agendar:%0A` +
-                             `💇‍♀️ *Serviço:* ${servico}%0A` +
-                             `📅 *Data:* ${dataFormatada} (${horario})%0A%0A` +
-                             `_Li sobre o sinal de 30% e gostaria de confirmar o agendamento._`;
+            // Número do WhatsApp da Nalua (Coloque o número real aqui)
+            const phone = "5599999999999"; 
 
-            // Envia
-            window.open(`https://wa.me/${telefoneNalua}?text=${mensagem}`, '_blank');
+            // Construção da mensagem
+            const text = `Olá Nalua! ✨%0A%0AMe chamo *${nome}*.%0AGostaria de agendar: *${servico}*.%0A%0APreferência de data: ${dataFormatada} (${turno}).%0A%0AEstou ciente da entrada de 30% para confirmação e aguardo a chave PIX para garantir meu horário!`;
+
+            // Redirecionamento
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
         });
     </script>
 </body>

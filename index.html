@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nalua | Agenda 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #FAF7F2;
+            --primary: #3E3B36; /* Marrom Escuro */
+            --gold: #C19A6B;    /* Dourado */
+            --white: #ffffff;
+            --text-muted: #666;
+            --radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; }
+        
+        /* Botão Padrão */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            /* Cor de fundo sólida (fallback) + Imagem */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=1374&auto=format&fit=crop'), #4A3B32;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-text p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-text .btn { background: white; color: var(--primary); border-color: white; }
+        .hero-text .btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
+
+        /* Marquee (Faixa) */
+        .marquee { background: var(--primary); color: var(--gold); padding: 15px 0; overflow: hidden; white-space: nowrap; }
+        .marquee span { margin: 0 30px; font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
+        /* Seções Gerais */
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary); }
+        .section-header p { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+
+        /* Cards de Valores */
+        .grid-valores { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: center; }
+        .card { background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; }
+
+        /* Menu de Preços */
+        .menu-list { background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; }
+        .menu-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 20px 0; }
+        .menu-item:last-child { border: none; }
+        .item-desc h4 { font-size: 1.1rem; color: var(--primary); }
+        .item-desc span { display: block; font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
+        .item-price { font-weight: bold; color: var(--gold); font-size: 1.2rem; min-width: 100px; text-align: right; }
+
+        /* Aviso 30% */
+        .aviso-pagamento { background: var(--primary); color: white; border-radius: var(--radius); padding: 50px; text-align: center; margin-top: 50px; }
+        .aviso-pagamento h3 { color: var(--gold); font-size: 2rem; margin-bottom: 20px; }
+        .steps { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
+        .step { text-align: center; max-width: 200px; }
+        .step i { font-size: 2rem; color: var(--gold); margin-bottom: 15px; display: block; }
+
+        /* Formulário */
+        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .input-group input, .input-group select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Montserrat', sans-serif; }
+        .input-group input:focus, .input-group select:focus { border-color: var(--gold); outline: none; }
+
+        /* Footer e Mapa */
+        .map-section { padding: 0; width: 100%; height: 450px; background-color: #eee; }
+        .map-section iframe { width: 100%; height: 100%; border: 0; }
+        
+        footer { background: #222; color: white; text-align: center; padding: 60px 20px; }
+        .social-icons a { color: white; font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--gold); }
+
+        /* Responsivo */
+        @media(max-width: 768px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            .menu-item { flex-direction: column; align-items: flex-start; }
+            .item-price { margin-top: 10px; text-align: left; }
+            .steps { flex-direction: column; align-items: center; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-text">
+            <p>AGENDA 2026</p>
+            <h1>SUA BELEZA<br>ANCESTRAL</h1>
+            <a href="#agendar" class="btn">Agendar Horário</a>
+        </div>
+    </header>
+
+    <div class="marquee">
+        <marquee scrollamount="10">
+            ANCESTRALIDADE • IDENTIDADE • AUTOESTIMA • BELEZA NEGRA •
+            ANCESTRALIDADE • IDENTIDADE • AUTOESTIMA • BELEZA NEGRA •
+            ANCESTRALIDADE • IDENTIDADE • AUTOESTIMA • BELEZA NEGRA
+        </marquee>
+    </div>
+
+    <section>
+        <div class="section-header">
+            <p>A Essência Nalua</p>
+            <h2>Muito além de trançar</h2>
+        </div>
+        <div class="grid-valores">
+            <div class="card">
+                <i class="fas fa-spa"></i>
+                <h3>Humanização</h3>
+                <p>Aqui você não é um número. Ouvimos sua história e respeitamos sua identidade.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-crown"></i>
+                <h3>Autoestima</h3>
+                <p>Nossas técnicas são pensadas para elevar sua confiança e conexão ancestral.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-coffee"></i>
+                <h3>Conforto</h3>
+                <p>Ambiente climatizado, café especial e uma energia que renova.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-precos">
+        <div class="section-header">
+            <p>Menu 2026</p>
+            <h2>Nossos Serviços</h2>
+        </div>
+        <div class="menu-list">
+            <div class="menu-item">
+                <div class="item-desc">
+                    <h4>Box Braid</h4>
+                    <span>Clássica e versátil (+ Mão de obra)</span>
+                </div>
+                <div class="item-price">R$ 380</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-desc">
+                    <h4>Gypsy Braid</h4>
+                    <span>Estilo boho chic, livre e leve</span>
+                </div>
+                <div class="item-price">R$ 440</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-desc">
+                    <h4>Goddess Braids</h4>
+                    <span>Pontas cacheadas, acabamento premium</span>
+                </div>
+                <div class="item-price">R$ 400</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-desc">
+                    <h4>Boho Braids</h4>
+                    <span>Leveza e movimento</span>
+                </div>
+                <div class="item-price">R$ 415</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-desc">
+                    <h4>Nagô (Fulani)</h4>
+                    <span>Arte rente à raiz</span>
+                </div>
+                <div class="item-price">R$ 215</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-desc">
+                    <h4>Spa Capilar (Pré/Pós)</h4>
+                    <span>Higienização profunda e detox</span>
+                </div>
+                <div class="item-price">R$ 60</div>
+            </div>
+        </div>
+
+        <div class="aviso-pagamento">
+            <h3>Política de Agendamento</h3>
+            <p>Para garantir que seu horário seja <strong>exclusivamente seu</strong> e prepararmos seu material com carinho, trabalhamos com confirmação via sinal.</p>
+            <div class="steps">
+                <div class="step">
+                    <i class="fas fa-calendar-alt"></i>
+                    <strong>1. Escolha a data</strong>
+                </div>
+                <div class="step">
+                    <i class="fas fa-lock"></i>
+                    <strong>2. Sinal de 30%</strong>
+                    <div style="font-size: 0.8rem; margin-top:5px; opacity:0.8">Garante o horário</div>
+                </div>
+                <div class="step">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>3. Confirmação</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agendar">
+        <div class="section-header">
+            <p>Você merece esse cuidado</p>
+            <h2>Solicitar Agendamento</h2>
+        </div>
+        <div class="form-container">
+            <form id="whatsForm">
+                <div class="input-group">
+                    <label>Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                </div>
+                <div class="input-group">
+                    <label>Serviço Desejado</label>
+                    <select id="servico" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Box Braid">Box Braid (R$ 380)</option>
+                        <option value="Gypsy Braid">Gypsy Braid (R$ 440)</option>
+                        <option value="Goddess Braids">Goddess Braids (R$ 400)</option>
+                        <option value="Boho Braids">Boho Braids (R$ 415)</option>
+                        <option value="Nagô Fulani">Nagô Fulani (R$ 215)</option>
+                        <option value="French Curl">French Curl (R$ 380)</option>
+                        <option value="Spa Capilar">Spa Capilar (R$ 60)</option>
+                        <option value="Manutenção">Manutenção / Retirada</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Data Preferida</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="input-group">
+                    <label>Horário</label>
+                    <select id="horario">
+                        <option value="Manhã">Manhã (09:00 - 12:00)</option>
+                        <option value="Tarde">Tarde (13:00 - 17:00)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Enviar via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="map-section">
+        <iframe 
+            src="https://maps.google.com/maps?q=Rua%20Delta%2C%20306%20-%20Centro%2C%20Imperatriz%20-%20MA&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <footer>
+        <h3>NALUA BRAIDS</h3>
+        <p>Rua Delta, 306 - Centro, Imperatriz - MA</p>
+        <div class="social-icons" style="margin-top: 20px;">
+            <a href="https://instagram.com/nalua_braids" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" id="zapFooter"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">© 2026 Nalua Braids - Desenvolvido por Voxo Estúdio</p>
+    </footer>
+
+    <script>
+        // Configuração do Telefone (Insira o número aqui, apenas dígitos)
+        const telefoneNalua = "5599999999999"; 
+
+        // Atualiza link do rodapé
+        document.getElementById('zapFooter').href = `https://wa.me/${telefoneNalua}`;
+
+        document.getElementById('whatsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Dados do formulário
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const dataRaw = document.getElementById('data').value;
+            const horario = document.getElementById('horario').value;
+
+            // Formata Data (Corrige problema de fuso horário)
+            let dataFormatada = "A combinar";
+            if (dataRaw) {
+                const partes = dataRaw.split('-');
+                dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+            }
+
+            // Cria mensagem
+            const mensagem = `*Olá, Nalua!* ✨%0A%0A` +
+                             `Me chamo *${nome}* e gostaria de agendar:%0A` +
+                             `💇‍♀️ *Serviço:* ${servico}%0A` +
+                             `📅 *Data:* ${dataFormatada} (${horario})%0A%0A` +
+                             `_Li sobre o sinal de 30% e gostaria de confirmar o agendamento._`;
+
+            // Envia
+            window.open(`https://wa.me/${telefoneNalua}?text=${mensagem}`, '_blank');
+        });
+    </script>
+</body>
+</html>

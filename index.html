@@ -506,18 +506,58 @@
 
     <section class="py-16 bg-[#0c0805] relative">
          <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row gap-10 items-center">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <span class="text-nalua-orange font-bold text-xs uppercase mb-2 block">Nossa Casa</span>
-                    <h2 class="text-4xl font-black text-white mb-4">VENHA NOS <span class="gradient-text">VISITAR</span></h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">Um espaço pensado para acolher você. Ambiente climatizado, cafézinho e aquela energia única que só a Nalua tem. Estamos no coração de Imperatriz.</p>
-                    <div class="mb-8"><h4 class="text-white font-bold text-2xl">Imperatriz - MA</h4><p class="text-gray-500 text-lg">R. Delta, 306 - Centro</p><p class="text-gray-600 text-sm">CEP: 65900-350</p></div>
-                    <p class="text-nalua-yellow text-sm font-bold uppercase tracking-widest mb-6"><i class="fas fa-clock mr-2"></i> Atendimento somente com hora marcada</p>
-                    <a href="https://maps.app.goo.gl/2oyZijHYBFNGFpby6" target="_blank" class="text-white border-b border-white/30 hover:border-nalua-yellow hover:text-nalua-yellow transition pb-1 text-sm uppercase font-bold tracking-wider">Abrir no Google Maps</a>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 mb-6 font-bold tracking-widest uppercase">
+                        <i class="fas fa-map-marker-alt text-nalua-orange"></i> Nossa Casa
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-6">VENHA NOS <span class="text-nalua-orange">VISITAR</span></h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        Um espaço pensado para acolher você. Ambiente climatizado, cafézinho e aquela energia única que só a Nalua tem. Estamos no coração de Imperatriz.
+                    </p>
+                    
+                    <div class="flex items-start gap-5 mb-10">
+                        <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-nalua-orange text-2xl shrink-0">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-2xl mb-1">Imperatriz - MA</h4>
+                            <p class="text-gray-500 text-lg">R. Delta, 306 - Centro</p>
+                            <p class="text-gray-600 text-sm mt-1">CEP: 65900-350</p>
+                            
+                            <p class="text-nalua-yellow text-xs font-bold uppercase tracking-widest mt-4 flex items-center gap-2">
+                                <i class="fas fa-clock"></i> Atendimento somente com hora marcada
+                            </p>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/2oyZijHYBFNGFpby6" target="_blank" class="w-full md:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition flex items-center justify-center md:justify-start gap-3 group">
+                        Abrir no Google Maps
+                        <i class="fas fa-external-link-alt text-nalua-orange group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="md:w-1/2 w-full h-[300px] glass-card p-2 rounded-3xl relative" data-aos="fade-left">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.992697856407!2d-47.4912648!3d-5.5262615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c55f6511397441%3A0x6d9f8d1c7d23d902!2sR.%20Delta%2C%20306%20-%20Bacuri%2C%20Imperatriz%20-%20MA%2C%2065900-350!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; filter: grayscale(1) contrast(1.2) invert(0.92);" allowfullscreen="" loading="lazy" class="rounded-2xl opacity-70 hover:opacity-100 transition duration-500"></iframe>
-                    <div class="absolute bottom-4 left-4 bg-green-500/90 text-white text-[10px] font-bold px-3 py-1 rounded-full animate-pulse shadow-lg">ABERTO AGORA</div>
+
+                <div class="md:w-1/2 w-full h-[350px] relative" data-aos="fade-left">
+                    <div class="w-full h-full rounded-3xl overflow-hidden border border-nalua-orange/30 shadow-[0_0_30px_rgba(223,94,22,0.15)] relative group">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.992697856407!2d-47.4912648!3d-5.5262615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c55f6511397441%3A0x6d9f8d1c7d23d902!2sR.%20Delta%2C%20306%20-%20Bacuri%2C%20Imperatriz%20-%20MA%2C%2065900-350!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: grayscale(1) contrast(1.1) invert(0.9) brightness(0.8);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            class="w-full h-full object-cover">
+                        </iframe>
+                        
+                        <div class="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg flex items-center gap-3 shadow-xl">
+                            <span class="relative flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                            <span class="text-white text-xs font-bold tracking-widest uppercase">Aberto Agora</span>
+                        </div>
+                    </div>
                 </div>
             </div>
          </div>

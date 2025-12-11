@@ -11,7 +11,7 @@
       "@context": "https://schema.org",
       "@type": "BeautySalon",
       "name": "Nalua Braids",
-      "image": "perfil-instagram.jpg",
+      "image": "perfil-nalua.jpg",
       "telephone": "+5599984855248",
       "address": {
         "@type": "PostalAddress",
@@ -79,74 +79,24 @@
     </script>
 
     <style>
-        /* CSS PERSONALIZADO */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-        }
-
-        .cursor-glow {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(223, 94, 22, 0.15), transparent 70%);
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s;
-            mix-blend-mode: screen;
-        }
-
-        .bg-noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 50;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
+        html, body { overflow-x: hidden; width: 100%; position: relative; }
+        .cursor-glow { width: 400px; height: 400px; background: radial-gradient(circle, rgba(223, 94, 22, 0.15), transparent 70%); position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s; mix-blend-mode: screen; }
+        .bg-noise { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0f0a06; }
         ::-webkit-scrollbar-thumb { background: #3d2b1f; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #df5e16; }
-
         .text-glow { text-shadow: 0 0 20px rgba(250, 163, 9, 0.3); }
-        
-        .glass-card {
-            background: rgba(26, 18, 11, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .glass-card:hover {
-            border-color: rgba(223, 94, 22, 0.4);
-            background: rgba(26, 18, 11, 0.7);
-            box-shadow: 0 10px 40px -10px rgba(223, 94, 22, 0.2);
-            transform: translateY(-5px) scale(1.01);
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #faa309, #df5e16);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
+        .glass-card { background: rgba(26, 18, 11, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .glass-card:hover { border-color: rgba(223, 94, 22, 0.4); background: rgba(26, 18, 11, 0.7); box-shadow: 0 10px 40px -10px rgba(223, 94, 22, 0.2); transform: translateY(-5px) scale(1.01); }
+        .gradient-text { background: linear-gradient(to right, #faa309, #df5e16); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .faq-item { transition: all 0.3s ease; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .faq-item:last-child { border-bottom: none; }
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-toggle:checked ~ .faq-content { max-height: 200px; }
         .faq-toggle:checked ~ label i { transform: rotate(180deg); }
-
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
         #mobile-menu { transition: all 0.3s ease-in-out; transform-origin: top; }
         #mobile-menu.hidden { opacity: 0; transform: scaleY(0); pointer-events: none; }
         #mobile-menu:not(.hidden) { opacity: 1; transform: scaleY(1); pointer-events: auto; }
@@ -168,7 +118,6 @@
             <a href="#" class="flex items-center mr-4 hover:opacity-80 transition shrink-0">
                 <span class="font-display text-xl md:text-3xl text-nalua-yellow tracking-widest">NALUA</span>
             </a>
-            
             <div class="hidden lg:flex items-center space-x-6 text-xs font-bold uppercase tracking-widest text-white/70 whitespace-nowrap">
                 <a href="#home" class="hover:text-white hover:text-nalua-yellow transition">Home</a>
                 <a href="#essencia" class="hover:text-white hover:text-nalua-yellow transition">A Marca</a>
@@ -176,16 +125,13 @@
                 <a href="#servicos" class="hover:text-white hover:text-nalua-yellow transition">Preços</a>
                 <a href="#agendamento" class="hover:text-white hover:text-nalua-yellow transition">Contato</a>
             </div>
-
             <a href="#agendamento" class="hidden lg:block ml-4 bg-nalua-orange hover:bg-orange-600 text-white hover:text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition shadow-[0_0_15px_rgba(223,94,22,0.4)] hover:shadow-[0_0_25px_rgba(223,94,22,0.6)] shrink-0 whitespace-nowrap">
                 Agendar
             </a>
-
             <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl focus:outline-none ml-auto p-2">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full mt-2 glass-card rounded-2xl p-6 flex flex-col gap-4 z-40 shadow-2xl border border-white/10">
             <a href="#home" class="text-white text-sm font-bold uppercase tracking-widest hover:text-nalua-yellow transition py-2 border-b border-white/5 mobile-link">Home</a>
             <a href="#essencia" class="text-white text-sm font-bold uppercase tracking-widest hover:text-nalua-yellow transition py-2 border-b border-white/5 mobile-link">A Marca</a>
@@ -201,30 +147,29 @@
         <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-nalua-red opacity-10 blur-[100px] rounded-full animate-blob animation-delay-2000 mix-blend-screen pointer-events-none"></div>
 
         <div class="absolute inset-0 z-0">
-            <img src="hero-bg-persistencia.jpg" 
-                 class="w-full h-full object-cover opacity-40 object-center md:object-top">
+            <img src="hero-bg-persistencia.jpg" class="w-full h-full object-cover opacity-40 object-center md:object-top">
             <div class="absolute inset-0 bg-gradient-to-b from-nalua-dark/70 via-nalua-dark/50 to-nalua-dark"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10 text-center flex-grow flex flex-col justify-center">
             <div class="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full border border-nalua-border bg-nalua-card/50 backdrop-blur-sm mb-6 mx-auto" data-aos="fade-down" data-aos-delay="200">
                 <span class="w-2 h-2 rounded-full bg-nalua-yellow animate-pulse"></span>
-                <span class="text-xs uppercase tracking-widest text-white/80">Vagas Limitadas</span>
+                <span class="text-xs uppercase tracking-widest text-white/80">VAGAS LIMITADAS · AGENDA 2026 ABERTA</span>
             </div>
 
             <h1 class="font-body font-black text-4xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white" data-aos="zoom-out-up" data-aos-duration="1200">
-                AGENDA 2026 ABERTA: <br>
-                SUA BELEZA <span class="font-display text-nalua-yellow font-normal text-glow">ANCESTRAL</span>
+                SUA BELEZA <br>ANCESTRAL MERECE <br>
+                <span class="font-display text-nalua-yellow font-normal text-glow">SER CELEBRADA</span>
             </h1>
             
             <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="400">
-                Mais do que um salão, um espaço de conexão. <br>
-                Tranças que contam histórias, elevam a autoestima e celebram quem você é.
+                Mais do que um salão, o Nalua é um espaço de conexão, descanso e identidade. <br>
+                Aqui, suas tranças contam histórias, fortalecem sua autoestima, valorizam suas raízes e revelam quem você é por dentro e por fora.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="600">
                 <a href="#agendamento" class="w-full sm:w-auto px-8 py-4 bg-nalua-orange text-white hover:text-white font-bold rounded-lg hover:bg-orange-600 transition shadow-[0_0_20px_rgba(223,94,22,0.3)] text-sm uppercase tracking-widest flex items-center justify-center gap-2 group hover:-translate-y-1">
-                    Agendar Minha Transformação <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    Agendar minha transformação <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
                 <span class="text-xs text-white/50 uppercase tracking-widest mt-2 sm:mt-0">Atendimento exclusivo com hora marcada</span>
             </div>
@@ -238,7 +183,7 @@
                 <span class="text-2xl md:text-4xl font-display text-nalua-orange/20 mx-8">•</span>
                 <span class="text-2xl md:text-4xl font-display text-white/10 mx-8 hover:text-nalua-yellow transition duration-500">AUTOESTIMA</span>
                 <span class="text-2xl md:text-4xl font-display text-nalua-orange/20 mx-8">•</span>
-                <span class="text-2xl md:text-4xl font-display text-white/10 mx-8 hover:text-nalua-yellow transition duration-500">BELEZA NEGRA</span>
+                <span class="text-2xl md:text-4xl font-display text-white/10 mx-8 hover:text-nalua-yellow transition duration-500">BELEZA</span>
             </div>
         </div>
     </section>
@@ -246,7 +191,7 @@
     <section id="essencia" class="py-24 relative bg-nalua-card/20 border-t border-white/5 z-20">
         <div class="container mx-auto px-6">
             <div class="mb-16 text-center" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-black mb-4 text-white">A <span class="gradient-text">ESSÊNCIA</span> NALUA</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-4 text-white">A ESSÊNCIA <span class="gradient-text">NALUA</span></h2>
                 <p class="text-white/60">Muito além de trançar cabelos.</p>
             </div>
 
@@ -256,8 +201,9 @@
                     <i class="fas fa-quote-right text-4xl text-nalua-border mb-6 block group-hover:text-nalua-yellow transition"></i>
                     <h3 class="text-2xl text-white font-bold mb-4">Nossa Missão</h3>
                     <p class="text-white/80 leading-relaxed text-lg group-hover:text-white transition">
-                        Cada trança é criada com atenção às histórias e preferências de cada cliente, valorizando a identidade, o bem-estar e a autoestima. Oferecemos uma experiência transformadora e humanizada.
+                        Nossa missão é oferecer uma experiência humanizada e transformadora, com escuta ativa, técnica cuidadosa e profundo respeito pela sua identidade. Aqui, cada cliente é única e cada resultado também.
                     </p>
+                    <p class="text-white/60 mt-4 text-sm">Cada trança que criamos carrega um pouco da sua história, da sua energia e da sua força.</p>
                 </div>
 
                 <div class="glass-card rounded-3xl p-8 flex flex-col justify-center items-center text-center border-t-4 border-t-nalua-orange group" data-aos="fade-left">
@@ -267,9 +213,9 @@
 
                 <div class="glass-card rounded-3xl p-8 flex flex-col justify-center relative group" data-aos="fade-up">
                     <i class="fas fa-eye text-3xl text-nalua-border mb-4 group-hover:text-white transition"></i>
-                    <h3 class="text-xl font-display text-white mb-4">VISÃO</h3>
+                    <h3 class="text-xl font-display text-white mb-4">NOSSA VISÃO</h3>
                     <p class="text-white/70 text-sm">
-                        Ser reconhecida como um espaço de beleza negra e de conexão espiritual, onde cada cliente se sinta respeitado, valorizado e confiante.
+                        Ser reconhecida como referência em beleza e conexão espiritual, onde você se sinta respeitada, valorizada e totalmente confiante.
                     </p>
                 </div>
 
@@ -303,24 +249,25 @@
 
                 <div class="space-y-8" data-aos="fade-left">
                     <div>
-                        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-6">MUITO ALÉM DE <br><span class="text-nalua-orange">TRANÇAR CABELOS</span></h2>
+                        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-6">A EXPERIÊNCIA NALUA</h2>
                         <p class="text-white/80 text-lg leading-relaxed">
-                            No Nalua, cada trança é um ato de carinho entrelaçado com técnica. Nossa missão é oferecer uma experiência transformadora e humanizada. Não tratamos apenas fios; cuidamos da sua energia, da sua história e da sua identidade.
+                            Muito além de tranças: um cuidado que começa na alma. Aqui, cada movimento de mão carrega carinho, técnica e ancestralidade.
                         </p>
+                        <p class="text-white/60 text-sm mt-4">Nós acreditamos que o autocuidado é um ritual, e por isso criamos um ambiente onde você pode respirar fundo, relaxar e se reconectar consigo mesma.</p>
                     </div>
 
                     <div class="space-y-6">
                         <div class="flex gap-4 items-center glass-card p-4 rounded-xl hover:bg-white/5 transition">
                             <div class="w-12 h-12 rounded-full bg-nalua-yellow/10 flex items-center justify-center text-nalua-yellow shrink-0 border border-nalua-yellow/20"><i class="fas fa-id-card-clip"></i></div>
-                            <div><h4 class="text-white font-bold text-lg">Identidade</h4><p class="text-white/60 text-sm">Um visual que reflete quem você está por dentro.</p></div>
+                            <div><h4 class="text-white font-bold text-lg">Identidade</h4><p class="text-white/60 text-sm">Transformamos o seu visual para refletir quem você é com verdade e beleza.</p></div>
                         </div>
                         <div class="flex gap-4 items-center glass-card p-4 rounded-xl hover:bg-white/5 transition">
                             <div class="w-12 h-12 rounded-full bg-nalua-orange/10 flex items-center justify-center text-nalua-orange shrink-0 border border-nalua-orange/20"><i class="fas fa-tree"></i></div>
-                            <div><h4 class="text-white font-bold text-lg">Ancestralidade</h4><p class="text-white/60 text-sm">Respeito às raízes, à cultura e à sua beleza natural.</p></div>
+                            <div><h4 class="text-white font-bold text-lg">Ancestralidade</h4><p class="text-white/60 text-sm">Honramos as suas raízes, sua história e a força da sua cultura.</p></div>
                         </div>
                         <div class="flex gap-4 items-center glass-card p-4 rounded-xl hover:bg-white/5 transition">
                             <div class="w-12 h-12 rounded-full bg-nalua-red/10 flex items-center justify-center text-nalua-red shrink-0 border border-nalua-red/20"><i class="fas fa-coffee"></i></div>
-                            <div><h4 class="text-white font-bold text-lg">Acolhimento</h4><p class="text-white/60 text-sm">Café quentinho, ambiente climatizado e escuta ativa.</p></div>
+                            <div><h4 class="text-white font-bold text-lg">Acolhimento</h4><p class="text-white/60 text-sm">Ambiente aconchegante, suco geladinho, conversa leve e um cuidado que abraça.</p></div>
                         </div>
                     </div>
                 </div>
@@ -331,7 +278,7 @@
     <section id="diferenciais" class="py-24 bg-[#0c0805] relative border-t border-white/5">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-nalua-orange font-bold tracking-widest uppercase text-xs mb-2 block">Por que escolher?</span>
+                <span class="text-nalua-orange font-bold tracking-widest uppercase text-xs mb-2 block">Por que escolher o Nalua?</span>
                 <h2 class="text-3xl md:text-5xl font-black text-white">UMA EXPERIÊNCIA PENSADA <br> <span class="gradient-text">PARA VOCÊ</span></h2>
             </div>
 
@@ -339,17 +286,17 @@
                 <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition duration-500" data-aos="fade-up">
                     <i class="fas fa-comments text-4xl text-white/50 mb-6 group-hover:text-nalua-yellow transition"></i>
                     <h3 class="text-xl font-bold text-white mb-3">Atendimento Humanizado</h3>
-                    <p class="text-white/60">Aqui você não é um número. Nós ouvimos o que você deseja e adaptamos a técnica ao seu rosto e estilo de vida.</p>
+                    <p class="text-white/60">Você não é mais uma cliente. Você é prioridade. Ouvimos suas preferências e adaptamos as técnicas ao seu rosto e estilo de vida.</p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition duration-500 border-nalua-orange/20" data-aos="fade-up" data-aos-delay="150">
                     <i class="fas fa-spa text-4xl text-nalua-orange mb-6 transition"></i>
                     <h3 class="text-xl font-bold text-white mb-3">Ambiente de Paz</h3>
-                    <p class="text-white/60">O salão é o seu refúgio. Saia da correria do dia a dia e entre em um espaço de renovação total.</p>
+                    <p class="text-white/60">Um refúgio para desacelerar e renovar suas energias.</p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition duration-500" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-star text-4xl text-white/50 mb-6 group-hover:text-nalua-yellow transition"></i>
-                    <h3 class="text-xl font-bold text-white mb-3">Técnica de Ponta</h3>
-                    <p class="text-white/60">Materiais de qualidade, acabamento impecável e durabilidade que respeita a saúde do seu fio.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Técnica Especializada</h3>
+                    <p class="text-white/60">Materiais premium, acabamento impecável e segurança para a saúde do seu cabelo.</p>
                 </div>
             </div>
         </div>
@@ -358,8 +305,8 @@
     <section class="py-24 bg-nalua-dark relative border-t border-white/5">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-nalua-orange font-bold tracking-widest uppercase text-xs mb-2 block">O que dizem nossas clientes</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white">AMOR EM CADA <span class="gradient-text">DETALHE</span></h2>
+                <span class="text-nalua-orange font-bold tracking-widest uppercase text-xs mb-2 block">Depoimentos</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white">COLOCAMOS DEDICAÇÃO EM <span class="gradient-text">CADA TRANÇA</span></h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -392,7 +339,7 @@
                 <div class="glass-card p-8 rounded-3xl relative group hover:-translate-y-2 transition duration-500" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-quote-left text-4xl text-nalua-yellow/20 absolute top-8 left-8"></i>
                     <p class="text-white/80 leading-relaxed mb-6 mt-8 relative z-10">
-                        "O sinal de 30% vale cada centavo pela pontualidade e exclusividade. Cheguei e já fui atendida, com um cafézinho maravilhoso."
+                        "O sinal de 30% vale cada centavo. Cheguei e já fui atendida, com um cafézinho maravilhoso."
                     </p>
                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
                         <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-nalua-dark font-bold text-xs">M</div>
@@ -419,7 +366,6 @@
                     <button onclick="document.getElementById('diferenciais-scroll').scrollBy({left: 350, behavior: 'smooth'})" class="w-12 h-12 rounded-full border border-white/10 bg-white/5 text-white hover:bg-nalua-orange transition flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-
             <div id="diferenciais-scroll" class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" data-aos="fade-up">
                 <div class="min-w-[300px] md:min-w-[400px] h-[500px] rounded-3xl overflow-hidden snap-center border border-white/10 group shadow-2xl relative"><img src="diferencial-cuidado-detalhe.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"><div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent"><p class="text-white font-bold">Cuidado em cada detalhe</p></div></div>
                 <div class="min-w-[300px] md:min-w-[400px] h-[500px] rounded-3xl overflow-hidden snap-center border border-white/10 group shadow-2xl relative"><img src="diferencial-ambiente-acolhedor.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"><div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent"><p class="text-white font-bold">Ambiente Acolhedor</p></div></div>
@@ -436,7 +382,6 @@
                 <span class="text-nalua-orange font-bold tracking-widest uppercase text-xs mb-2 block">Nosso Portfólio</span>
                 <h2 class="text-3xl md:text-5xl font-black text-white">ARTE EM <span class="gradient-text">MOVIMENTO</span></h2>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="group relative h-96 rounded-2xl overflow-hidden cursor-pointer glass-card border-none" data-aos="fade-up">
                     <img src="portfolio-twist-cor30.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
@@ -502,7 +447,7 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-black text-white">MENU DE <span class="gradient-text">SERVIÇOS</span></h2>
                 <p class="text-nalua-yellow text-sm font-bold uppercase tracking-widest mt-4">Tabela 2026</p>
-                <p class="text-xs text-white/50 mt-2">Valores sujeitos a análise personalizada</p>
+                <p class="text-xs text-white/50 mt-2">Valores sujeitos à análise personalizada</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -510,12 +455,15 @@
                     <div>
                         <h3 class="text-nalua-yellow font-bold uppercase tracking-widest text-sm mb-6 pl-2 border-l-2 border-nalua-yellow">Favoritos</h3>
                         <div class="space-y-3">
-                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Box Braid</h4><p class="text-white/60 text-xs">Clássica e versátil</p></div><div class="text-right"><span class="text-white font-bold text-lg">R$ 380</span><span class="block text-[10px] text-white/50">Mão de obra</span></div></div>
-                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Gypsy Braid</h4><p class="text-white/60 text-xs">Estilo boho chic</p></div><span class="text-white font-bold text-lg">R$ 440</span></div>
-                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Goddess Braids</h4><p class="text-white/60 text-xs">Pontas cacheadas</p></div><span class="text-white font-bold text-lg">R$ 400</span></div>
-                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Boho Braids</h4><p class="text-white/60 text-xs">Leveza e movimento</p></div><span class="text-white font-bold text-lg">R$ 415</span></div>
+                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Box Braid</h4><p class="text-white/60 text-xs">R$ 380</p></div><div class="text-right"></div></div>
+                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Gypsy Braid</h4><p class="text-white/60 text-xs">R$ 440</p></div></div>
+                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Goddess Braids</h4><p class="text-white/60 text-xs">R$ 400</p></div></div>
+                            <div class="glass-card p-5 rounded-xl flex justify-between items-center group"><div><h4 class="text-white font-bold group-hover:text-nalua-yellow transition">Boho Braids</h4><p class="text-white/60 text-xs">R$ 415</p></div></div>
                         </div>
                     </div>
+                </div>
+
+                <div class="space-y-8" data-aos="fade-left">
                     <div>
                         <h3 class="text-nalua-orange font-bold uppercase tracking-widest text-sm mb-6 pl-2 border-l-2 border-nalua-orange">Nagô & Variações</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -527,12 +475,9 @@
                             <div class="glass-card p-4 rounded-lg flex justify-between items-center"><span class="text-white/80 font-bold text-sm">Nagô (Tiara)</span><span class="text-nalua-orange font-bold text-xs">R$ 60 - 80</span></div>
                         </div>
                     </div>
-                </div>
-
-                <div class="space-y-8" data-aos="fade-left">
                     <div class="p-6 rounded-xl border border-dashed border-white/20 bg-white/5 text-center hover:border-nalua-yellow transition py-10">
-                        <p class="text-sm text-white/50 mb-3">Quer algo exclusivo que não está na lista?</p>
-                        <a href="#agendamento" class="text-nalua-yellow font-bold uppercase text-xs tracking-widest hover:text-white transition border-b border-nalua-yellow pb-1">Solicitar Orçamento Personalizado</a>
+                        <p class="text-sm text-white/50 mb-3">Quer algo exclusivo?</p>
+                        <a href="#agendamento" class="text-nalua-yellow font-bold uppercase text-xs tracking-widest hover:text-white transition border-b border-nalua-yellow pb-1">Solicitar orçamento personalizado</a>
                     </div>
                 </div>
             </div>
@@ -544,20 +489,19 @@
             <div class="glass-card rounded-3xl p-8 md:p-12 border border-nalua-yellow/20" data-aos="zoom-in">
                 <div class="text-center mb-10">
                     <h2 class="text-2xl md:text-3xl font-black text-white mb-2">COMO FUNCIONA O <span class="text-nalua-yellow">AGENDAMENTO</span></h2>
-                    <p class="text-white/60 text-sm">Transparência e compromisso mútuo.</p>
+                    <p class="text-white/60 text-sm">Transparência e compromisso, do jeitinho que você merece</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left relative">
                     <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-white/10 -z-10"></div>
-                    <div class="relative"><div class="w-12 h-12 bg-nalua-dark border border-nalua-yellow text-nalua-yellow rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0 mb-4 z-10 relative">1</div><h4 class="text-white font-bold mb-2">Pré-Agendamento</h4><p class="text-white/60 text-sm">Você escolhe o serviço e o horário no formulário abaixo.</p></div>
-                    <div class="relative"><div class="w-12 h-12 bg-nalua-orange text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0 mb-4 shadow-[0_0_20px_rgba(223,94,22,0.5)] z-10 relative">2</div><h4 class="text-white font-bold mb-2">Confirmação via Sinal (30%)</h4><p class="text-white/60 text-sm">O agendamento só é confirmado mediante pagamento de 30% do valor via PIX. Isso não é uma taxa extra, é parte do pagamento.</p></div>
-                    <div class="relative"><div class="w-12 h-12 bg-nalua-dark border border-white/20 text-white/80 rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0 mb-4 z-10 relative">3</div><h4 class="text-white font-bold mb-2">Garantia Total</h4><p class="text-white/60 text-sm">Isso garante que seu horário seja 100% seu, sem atrasos e com material preparado. O restante é pago apenas no dia.</p></div>
+                    <div class="relative"><div class="w-12 h-12 bg-nalua-dark border border-nalua-yellow text-nalua-yellow rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0 mb-4 z-10 relative">1</div><h4 class="text-white font-bold mb-2">Pré-Agendamento</h4><p class="text-white/60 text-sm">Escolha o serviço e horário no formulário.</p></div>
+                    <div class="relative"><div class="w-12 h-12 bg-nalua-orange text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0 mb-4 shadow-[0_0_20px_rgba(223,94,22,0.5)] z-10 relative">2</div><h4 class="text-white font-bold mb-2">Confirmação via Sinal (30%)</h4><p class="text-white/60 text-sm">O sinal é parte do pagamento não é taxa extra.</p></div>
+                    <div class="relative"><div class="w-12 h-12 bg-nalua-dark border border-white/20 text-white/80 rounded-full flex items-center justify-center text-xl font-bold mx-auto md:mx-0 mb-4 z-10 relative">3</div><h4 class="text-white font-bold mb-2">Garantia Total</h4><p class="text-white/60 text-sm">Seu horário é exclusivo, sem atrasos, e com todo o material preparado.</p></div>
                 </div>
 
-                <div class="mt-10 pt-6 border-t border-white/10 text-center">
-                    <p class="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Aceitamos</p>
-                    <div class="flex justify-center gap-6 text-2xl text-white/60 mb-4"><i class="fa-brands fa-pix hover:text-white transition"></i><i class="fa-regular fa-credit-card hover:text-white transition"></i><i class="fa-solid fa-money-bill-wave hover:text-white transition"></i></div>
-                    <p class="text-[10px] text-nalua-orange uppercase tracking-wider">O sinal garante a exclusividade do seu horário.</p>
+                <div class="mt-10 pt-6 border-t border-white/10 text-center space-y-2">
+                    <p class="text-sm font-bold text-white/50 uppercase tracking-widest"><i class="fas fa-check text-green-500 mr-2"></i> Aceitamos PIX, dinheiro e cartão de crédito</p>
+                    <p class="text-sm font-bold text-white/50 uppercase tracking-widest"><i class="fas fa-check text-green-500 mr-2"></i> O sinal garante a exclusividade do seu horário</p>
                 </div>
             </div>
         </div>
@@ -585,12 +529,12 @@
                         <span class="font-bold text-white group-hover:text-nalua-yellow transition">O sinal de 30% é reembolsável?</span>
                         <i class="fas fa-chevron-down text-white/50 transition-transform duration-300"></i>
                     </label>
-                    <div class="faq-content"><p class="text-gray-400 text-sm pb-4">O sinal é uma garantia de reserva. Em caso de desistência com menos de 48h de antecedência, o valor não é reembolsado.</p></div>
+                    <div class="faq-content"><p class="text-gray-400 text-sm pb-4">O sinal é uma garantia de reserva. O valor não é reembolsado.</p></div>
                 </div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq3" class="hidden faq-toggle">
                     <label for="faq3" class="flex justify-between items-center py-4 cursor-pointer group">
-                        <span class="font-bold text-white group-hover:text-nalua-yellow transition">Quanto tempo dura a Box Braid?</span>
+                        <span class="font-bold text-white group-hover:text-nalua-yellow transition">Quanto tempo dura a trança?</span>
                         <i class="fas fa-chevron-down text-white/50 transition-transform duration-300"></i>
                     </label>
                     <div class="faq-content"><p class="text-gray-400 text-sm pb-4">Em média, de 2 a 3 meses, dependendo do crescimento do cabelo e cuidados diários.</p></div>
@@ -624,10 +568,10 @@
                         <i class="fas fa-map-marker-alt text-nalua-orange"></i> Nossa Casa
                     </div>
                     <h2 class="text-4xl md:text-5xl font-black text-white mb-6">VENHA NOS <span class="text-nalua-orange">VISITAR</span></h2>
-                    <p class="text-white/70 text-lg mb-10 leading-relaxed">Um espaço pensado para acolher você. Ambiente climatizado, cafézinho e aquela energia única.</p>
+                    
                     <div class="flex items-start gap-5 mb-10">
                         <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-nalua-orange text-2xl shrink-0"><i class="fas fa-location-dot"></i></div>
-                        <div><h4 class="text-white font-bold text-2xl mb-1">Imperatriz - MA</h4><p class="text-white/60 text-lg">R. Delta, 306 - Centro</p><p class="text-white/50 text-sm mt-1">CEP: 65900-350</p><p class="text-nalua-yellow text-xs font-bold uppercase tracking-widest mt-4 flex items-center gap-2"><i class="fas fa-clock"></i> Atendimento somente com hora marcada</p></div>
+                        <div><h4 class="text-white font-bold text-2xl mb-1">Imperatriz - MA</h4><p class="text-white/60 text-lg">R. Delta, 306 - Centro</p><p class="text-nalua-yellow text-xs font-bold uppercase tracking-widest mt-4 flex items-center gap-2"><i class="fas fa-clock"></i> Atendimento somente com hora marcada</p></div>
                     </div>
                     <a href="https://maps.app.goo.gl/2oyZijHYBFNGFpby6" target="_blank" class="w-full md:w-1/2 px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition flex items-center justify-center gap-3 group">Abrir no Google Maps <i class="fas fa-external-link-alt text-nalua-orange group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i></a>
                 </div>
@@ -646,7 +590,7 @@
             <div class="max-w-2xl mx-auto glass-card rounded-3xl p-8 md:p-12 border border-nalua-yellow/10" data-aos="fade-up">
                 <div class="text-center mb-8">
                     <h2 class="text-2xl md:text-3xl font-black text-white mb-2">PRONTA PARA A TRANSFORMAÇÃO?</h2>
-                    <p class="text-white/60 text-sm">Preencha o formulário para iniciar seu agendamento via WhatsApp.</p>
+                    <p class="text-white/60 text-sm">Preencha o formulário e inicie seu agendamento via WhatsApp.</p>
                 </div>
                 <form id="bookingForm" class="space-y-4">
                     <div><label class="text-xs font-bold text-nalua-orange uppercase tracking-wider mb-1 block ml-1">Nome Completo</label><input type="text" id="clientName" required placeholder="Digite seu nome" class="w-full bg-nalua-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-nalua-orange focus:outline-none transition text-sm placeholder-white/30"></div>
@@ -655,8 +599,8 @@
                         <div><label class="text-xs font-bold text-nalua-orange uppercase tracking-wider mb-1 block ml-1">Data Preferida</label><input type="date" id="bookingDate" required class="w-full bg-nalua-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-nalua-orange focus:outline-none transition text-sm [color-scheme:dark]"></div>
                         <div><label class="text-xs font-bold text-nalua-orange uppercase tracking-wider mb-1 block ml-1">Horário (09h às 17h)</label><select id="bookingTime" required class="w-full bg-nalua-dark border border-white/10 rounded-lg px-4 py-3 text-white/80 focus:border-nalua-orange focus:outline-none transition text-sm cursor-pointer"><option value="">Selecione...</option><option value="09:00">09:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option></select></div>
                     </div>
-                    <div><label class="text-xs font-bold text-nalua-orange uppercase tracking-wider mb-1 block ml-1">Serviço Desejado</label><select id="serviceSelect" required class="w-full bg-nalua-dark border border-white/10 rounded-lg px-4 py-3 text-white/80 focus:border-nalua-orange focus:outline-none transition text-sm cursor-pointer"><option value="">SELECIONE O SERVIÇO...</option><optgroup label="Favoritos" class="bg-nalua-dark text-nalua-yellow"><option value="Box Braid">Box Braid</option><option value="Gypsy Braid">Gypsy Braid</option><option value="Goddess Braids">Goddess Braids</option><option value="Boho Braids">Boho Braids</option></optgroup><optgroup label="Nagô & Variações" class="bg-nalua-dark text-nalua-orange"><option value="Fulani">Fulani</option><option value="Fulani c/ Cachos">Fulani c/ Cachos</option><option value="Twist">Twist</option><option value="French Curl">French Curl</option><option value="Miojinho">Miojinho</option><option value="Nagô (Tiara)">Nagô (Tiara)</option></optgroup><optgroup label="Cuidados" class="bg-nalua-dark text-green-500"><option value="Revitalização de Cachos">Revitalização de Cachos</option><option value="Manutenção Parcial">Manutenção Parcial</option><option value="Retirada + Umectação">Retirada + Umectação</option></optgroup><option value="Orçamento Personalizado">Outro / Orçamento</option></select></div>
-                    <button type="submit" class="w-full bg-gradient-to-r from-nalua-yellow to-nalua-orange text-white hover:text-white font-black py-4 rounded-lg hover:opacity-90 transition shadow-lg text-sm uppercase tracking-[0.2em] mt-4">SOLICITAR AGENDAMENTO</button>
+                    <div><label class="text-xs font-bold text-nalua-orange uppercase tracking-wider mb-1 block ml-1">Serviço Desejado</label><select id="serviceSelect" required class="w-full bg-nalua-dark border border-white/10 rounded-lg px-4 py-3 text-white/80 focus:border-nalua-orange focus:outline-none transition text-sm cursor-pointer"><option value="">SELECIONE O SERVIÇO...</option><optgroup label="Favoritos" class="bg-nalua-dark text-nalua-yellow"><option value="Box Braid">Box Braid</option><option value="Gypsy Braid">Gypsy Braid</option><option value="Goddess Braids">Goddess Braids</option><option value="Boho Braids">Boho Braids</option></optgroup><optgroup label="Nagô & Variações" class="bg-nalua-dark text-nalua-orange"><option value="Fulani">Fulani</option><option value="Fulani c/ Cachos">Fulani c/ Cachos</option><option value="Twist">Twist</option><option value="French Curl">French Curl</option><option value="Miojinho">Miojinho</option><option value="Nagô (Tiara)">Nagô (Tiara)</option></optgroup><option value="Orçamento Personalizado">Outro / Orçamento</option></select></div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-nalua-yellow to-nalua-orange text-white hover:text-white font-black py-4 rounded-lg hover:opacity-90 transition shadow-lg text-sm uppercase tracking-[0.2em] mt-4">→ Solicitar Agendamento</button>
                 </form>
             </div>
         </div>
